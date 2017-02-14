@@ -1,5 +1,5 @@
 const async = require('async');
-const Homework = require('../model/homework');
+const Section = require('../model/section');
 const constant = require('../constant/constant');
 
 
@@ -7,11 +7,11 @@ export default class HomeContorller {
     getAll(req, res, next) {
         async.series({
             items: (cb)=> {
-                Homework.find({}, cb)
+                Section.find({}, cb)
 
             },
             totalCount: (cb)=> {
-                Homework.count(cb)
+                Section.count(cb)
             }
         }, (err, result)=> {
             if (err) {
@@ -23,7 +23,7 @@ export default class HomeContorller {
     }
 
     create(req, res, next) {
-        Homework.create(req.body, (err, result)=> {
+        Section.create(req.body, (err, result)=> {
             if (err) {
                 next(err);
             }
@@ -32,7 +32,7 @@ export default class HomeContorller {
     }
 
     getOne(req, res, next) {
-        Homework.findOne({_id: req.params.id}, (err, result)=> {
+        Section.findOne({_id: req.params.id}, (err, result)=> {
             if (err) {
                 next(err);
             }
@@ -44,7 +44,7 @@ export default class HomeContorller {
     }
 
     update(req, res, next) {
-        Homework.update({_id: req.params.id}, req.body, function (err, result) {
+        Section.update({_id: req.params.id}, req.body, function (err, result) {
             if (err) {
                 res.next(err)
             }
@@ -56,7 +56,7 @@ export default class HomeContorller {
     }
 
     delete(req, res, next) {
-        Homework.remove({_id: req.params.id}, function (err, result) {
+        Section.remove({_id: req.params.id}, function (err, result) {
             if (err) {
                 res.next(err)
             }
