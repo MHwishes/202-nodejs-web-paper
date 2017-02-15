@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const paperShema = mongoose.Schema({
-    paperId: String,
     makerId: String
 });
 

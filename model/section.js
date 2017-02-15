@@ -10,7 +10,7 @@ const sectionSchema = mongoose.Schema({
     }],
     section: {
         type: mongoose.Schema.ObjectId,
-        ref: "Section"
+        ref: "Paper"
     }
 });
 
