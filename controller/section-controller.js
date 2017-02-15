@@ -39,7 +39,7 @@ class SectionController {
             if (!result) {
                 res.sendStatus(constant.httpCode.NOT_FOUND);
             }
-            res.status(constant.httpCode.ok).send(result);
+            return res.status(constant.httpCode.OK).send(result);
         })
     }
 
