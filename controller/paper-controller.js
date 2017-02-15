@@ -3,7 +3,7 @@ const paper = require('../model/paper');
 const constant = require('../constant/constant');
 
 
-export default class HomeContorller {
+class PaperController {
     getAll(req, res, next) {
         async.series({
             items: (cb)=> {
@@ -67,3 +67,5 @@ export default class HomeContorller {
         })
     }
 }
+
+module.exports = PaperController;

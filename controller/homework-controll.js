@@ -3,7 +3,7 @@ const Homework = require('../model/homework');
 const constant = require('../constant/constant');
 
 
-export default class HomeContorller {
+class HomeController {
     getAll(req, res, next) {
         async.series({
             items: (cb)=> {
@@ -67,3 +67,4 @@ export default class HomeContorller {
         })
     }
 }
+module.exports = HomeController;

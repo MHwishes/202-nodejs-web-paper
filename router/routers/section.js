@@ -1,5 +1,5 @@
-import {Router} from 'express';
-import SectionController from '../../controller/section-controller';
+const {Router} =require('express');
+const SectionController = require('../../controller/section-controller');
 
 
 const router = Router();
@@ -11,4 +11,4 @@ router.get('/:id', sectionCtrl.getOne);
 router.put('/:id', sectionCtrl.update);
 router.delete('/:id', sectionCtrl.delete);
 
-export default router;
+module.exports = router;

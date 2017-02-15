@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
-const paperShema = mongoose.Schema({
+const paperSchema = mongoose.Schema({
     makerId: String
 });
 
-module.exports = mongoose.model('Paper', paperShema);
+module.exports = mongoose.model('Paper', paperSchema);

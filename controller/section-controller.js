@@ -3,7 +3,7 @@ const Section = require('../model/section');
 const constant = require('../constant/constant');
 
 
-export default class HomeContorller {
+class SectionController {
     getAll(req, res, next) {
         async.series({
             items: (cb)=> {
@@ -67,3 +67,5 @@ export default class HomeContorller {
         })
     }
 }
+
+module.exports = SectionController;

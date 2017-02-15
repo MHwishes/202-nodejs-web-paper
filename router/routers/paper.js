@@ -1,5 +1,5 @@
-import {Router} from 'express';
-import PaperController from '../../controller/paper-controller';
+const {Router} =require('express');
+const PaperController = require('../../controller/paper-controller');
 
 
 const router = Router();
@@ -11,4 +11,4 @@ router.get('/:id', paperCtrl.getOne);
 router.put('/:id', paperCtrl.update);
 router.delete('/:id', paperCtrl.delete);
 
-export default router;
+module.exports = router;

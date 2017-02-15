@@ -1,5 +1,5 @@
-import {Router} from 'express';
-import HomeworkController from '../../controller/homework-controll';
+const {Router} =require('express');
+const HomeworkController = require('../../controller/homework-controll');
 
 
 const router = Router();
@@ -11,4 +11,4 @@ router.get('/:id', homeworkCtrl.getOne);
 router.put('/:id', homeworkCtrl.update);
 router.delete('/:id', homeworkCtrl.delete);
 
-export default router;
+module.exports = router;
