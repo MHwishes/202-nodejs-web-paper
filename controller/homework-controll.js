@@ -32,7 +32,7 @@ class HomeController {
     }
 
     getOne(req, res, next) {
-        Homework.findOne({_id: req.params.id}, (err, result)=> {
+        Homework.findById({_id: req.params.id}, (err, result)=> {
             if (err) {
                 next(err);
             }
@@ -44,7 +44,7 @@ class HomeController {
     }
 
     update(req, res, next) {
-        Homework.update({_id: req.params.id}, req.body, function (err, result) {
+        Homework.findByIdAndUpdate({_id: req.params.id}, req.body, function (err, result) {
             if (err) {
                 res.next(err)
             }
@@ -56,7 +56,7 @@ class HomeController {
     }
 
     delete(req, res, next) {
-        Homework.remove({_id: req.params.id}, function (err, result) {
+        Homework.findByIdAndRemove({_id: req.params.id}, function (err, result) {
             if (err) {
                 res.next(err)
             }

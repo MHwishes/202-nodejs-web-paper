@@ -32,7 +32,7 @@ class PaperController {
     }
 
     getOne(req, res, next) {
-        paper.findOne({_id: req.params.id}, (err, result)=> {
+        paper.findById({_id: req.params.id}, (err, result)=> {
             if (err) {
                 next(err);
             }
@@ -44,7 +44,7 @@ class PaperController {
     }
 
     update(req, res, next) {
-        paper.update({_id: req.params.id}, req.body, function (err, result) {
+        paper.findByIdAndUpdate({_id: req.params.id}, req.body, function (err, result) {
             if (err) {
                 res.next(err)
             }
@@ -56,7 +56,7 @@ class PaperController {
     }
 
     delete(req, res, next) {
-        paper.remove({_id: req.params.id}, function (err, result) {
+        paper.findByIdAndRemove({_id: req.params.id}, function (err, result) {
             if (err) {
                 res.next(err)
             }
